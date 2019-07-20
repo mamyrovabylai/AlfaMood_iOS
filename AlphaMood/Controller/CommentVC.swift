@@ -10,25 +10,38 @@ import UIKit
 import Firebase
 class CommentVC: UIViewController {
     
+    //Outlets
+    @IBOutlet weak var viewForLabel: UIView!
+    @IBOutlet weak var readyButton: UIButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var label: UILabel!
+    //Variables
     var person: Person!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var textForLabel: String!
+        
+        viewForLabel.layer.cornerRadius = 8
+        readyButton.layer.cornerRadius = 8
+        textView.layer.cornerRadius = 8
+        textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        setPlaceholder()
+        textView.delegate = self
+        
         switch person.pickedIndex{
         case 0:
-            textForLabel = "О чем бы вы хотели с нами поделиться, но это на вас никак не влияет?"
+            label.text = TEXT_NEUTRAL
         case 1:
-            textForLabel = "Почему вы себя чувствуете так хорошо? :)"
+            label.text = TEXT_POSITIVE
         case 2:
-            textForLabel = "Почему у вас не такое уж хорошее настроение?"
+            label.text = TEXT_NEGATIVE
         default:
-            textForLabel = ""
+            label.text = ""
         }
-        label.text = textForLabel
+        
     }
+    
+    
     
     @IBAction func readyTapped(_ sender: Any) {
         person.isWriteAllowed { (response, documentID) in
@@ -41,10 +54,6 @@ class CommentVC: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
-
-        
-        
-        
         
     }
     
@@ -60,4 +69,32 @@ class CommentVC: UIViewController {
     }
     */
 
+}
+
+extension CommentVC: UITextViewDelegate {
+    
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.darkGray {
+            textView.text = ""
+            textView.textColor = .black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text == "" {
+            setPlaceholder()
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func setPlaceholder(){
+        textView.text = TEXTVIEW_PLACEHOLDER
+        textView.textColor = .darkGray
+    }
 }

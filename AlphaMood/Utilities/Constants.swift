@@ -19,3 +19,13 @@ let KEY_COMMENT = "comment"
 let PATH_MONTH = "months"
 let PATH_STATISTICS = "statistics"
 let PATH_NUMBER = "number"
+
+let NAME_IMG_NEUTRAL = "neutral"
+let NAME_IMG_POSITIVE = "smile"
+let NAME_IMG_NEGATIVE = "angry"
+
+let TEXT_NEUTRAL = "О чем бы вы хотели с нами поделиться, но это на вас никак не влияет?"
+let TEXT_POSITIVE = "Почему вы себя чувствуете так хорошо? :)"
+let TEXT_NEGATIVE = "Почему у вас не такое уж хорошее настроение?"
+
+let TEXTVIEW_PLACEHOLDER = "Если есть коментарий можете оставить, но это не обязательно"

@@ -15,8 +15,6 @@
 		1BB3C31622DDEFF80042A6E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BB3C31422DDEFF80042A6E3 /* LaunchScreen.storyboard */; };
 		1BB3C32022DDF32A0042A6E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BB3C31F22DDF32A0042A6E3 /* GoogleService-Info.plist */; };
 		1BB3C32622DDF45D0042A6E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3C32522DDF45D0042A6E3 /* Constants.swift */; };
-		1BB3C33122DE066C0042A6E3 /* SmileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3C32F22DE066C0042A6E3 /* SmileView.swift */; };
-		1BB3C33222DE066C0042A6E3 /* SmileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BB3C33022DE066C0042A6E3 /* SmileView.xib */; };
 		1BB3C33422DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BB3C33322DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets */; };
 		AE5787BEF248192AA9B49E57 /* libPods-AlphaMood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF321D582270A6A376A13B3A /* libPods-AlphaMood.a */; };
 /* End PBXBuildFile section */
@@ -37,8 +35,6 @@
 		1BB3C31722DDEFF80042A6E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BB3C31F22DDF32A0042A6E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1BB3C32522DDF45D0042A6E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		1BB3C32F22DE066C0042A6E3 /* SmileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmileView.swift; sourceTree = "<group>"; };
-		1BB3C33022DE066C0042A6E3 /* SmileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmileView.xib; sourceTree = "<group>"; };
 		1BB3C33322DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 19-48-47-177.xcassets"; sourceTree = "<group>"; };
 		6DED171E13EDA87E743CD388 /* Pods-AlphaMood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaMood.release.xcconfig"; path = "Target Support Files/Pods-AlphaMood/Pods-AlphaMood.release.xcconfig"; sourceTree = "<group>"; };
 		AF321D582270A6A376A13B3A /* libPods-AlphaMood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlphaMood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,8 +99,6 @@
 		1BB3C32222DDF4380042A6E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1BB3C32F22DE066C0042A6E3 /* SmileView.swift */,
-				1BB3C33022DE066C0042A6E3 /* SmileView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,7 +200,6 @@
 				1BB3C31622DDEFF80042A6E3 /* LaunchScreen.storyboard in Resources */,
 				1BB3C33422DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets in Resources */,
 				1BB3C32022DDF32A0042A6E3 /* GoogleService-Info.plist in Resources */,
-				1BB3C33222DE066C0042A6E3 /* SmileView.xib in Resources */,
 				1BB3C31122DDEFF60042A6E3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,7 +263,6 @@
 				1B98807322E0B03A00E5C9FE /* CommentVC.swift in Sources */,
 				1BB3C30C22DDEFF60042A6E3 /* AppDelegate.swift in Sources */,
 				1BB3C32622DDF45D0042A6E3 /* Constants.swift in Sources */,
-				1BB3C33122DE066C0042A6E3 /* SmileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

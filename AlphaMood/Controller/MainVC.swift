@@ -9,27 +9,36 @@
 import UIKit
 import SmoothPicker
 
-class MainVC: UIViewController, SmoothPickerViewDelegate, SmoothPickerViewDataSource {
+class MainVC: UIViewController {
 
-    @IBOutlet weak var picker: SmoothPickerView!
-    private var pickedIndex: Int!
-    private var userID: String!
     
-    private var views = [UIImageView]()
-    private let images = ["neutral", "smile", "angry"]
+    //Outlets
+    @IBOutlet weak var viewForLabel: UIView!
+    @IBOutlet weak var picker: SmoothPickerView!
+    @IBOutlet weak var buttonNext: UIButton!
+    
+    //Variables
+    private var userID: String!
+    private var views = [UIView]()
+    private let images = [NAME_IMG_NEUTRAL, NAME_IMG_POSITIVE, NAME_IMG_NEGATIVE]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        picker.delegate = self
-        picker.dataSource = self
         
-        for i in 0...2{
-            let view = UIImageView(image: UIImage(named: images[i]))
-            view.frame.size = CGSize(width: 180, height: 180)
+       
+        viewForLabel.layer.cornerRadius = 8
+        buttonNext.layer.cornerRadius = 8
+        
+        for image in images{
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: 240, height: 240))
+            let imageView = UIImageView(image: UIImage(named: image))
+            imageView.frame = CGRect(x: 40, y: 40, width: 160, height: 160)
+            view.addSubview(imageView)
             views.append(view)
         }
         
         picker.firstselectedItem = 1
-        pickedIndex = 1
+        picker.dataSource = self
         
         if let id = getUserID() {
             self.userID = id
@@ -37,22 +46,16 @@ class MainVC: UIViewController, SmoothPickerViewDelegate, SmoothPickerViewDataSo
             saveUserId()
         }
     }
+  
     
-    func didSelectItem(index: Int, view: UIView, pickerView: SmoothPickerView) {
-        self.pickedIndex = index
-    }
     
-    func numberOfItems(pickerView: SmoothPickerView) -> Int {
-        return 3
-    }
-    func itemForIndex(index: Int, pickerView: SmoothPickerView) -> UIView {
-        return views[index]
-    }
+    
     @IBAction func nextTapped(_ sender: Any) {
-        let person = Person(userID: self.userID, pickedIndex: pickedIndex)
+        let person = Person(userID: self.userID, pickedIndex: picker.currentSelectedIndex)
         performSegue(withIdentifier: "mainGoComment", sender: person)
     }
     
+    // Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mainGoComment", let destination = segue.destination as? CommentVC {
             if let person = sender as? Person {
@@ -66,6 +69,7 @@ class MainVC: UIViewController, SmoothPickerViewDelegate, SmoothPickerViewDataSo
 
 }
 
+// User Defaults
 extension MainVC {
     func saveUserId(){
         let userID = UUID().uuidString
@@ -80,6 +84,16 @@ extension MainVC {
         } else {
             return nil
         }
+    }
+}
+
+// Smooth Picker View's data source
+extension MainVC: SmoothPickerViewDataSource{
+    func numberOfItems(pickerView: SmoothPickerView) -> Int {
+        return views.count
+    }
+    func itemForIndex(index: Int, pickerView: SmoothPickerView) -> UIView {
+        return views[index]
     }
 }
 
