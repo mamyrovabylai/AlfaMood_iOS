@@ -1,0 +1,6 @@
+module Pods_AlphaMood {
+  umbrella header "Pods-AlphaMood-umbrella.h"
+
+  export *
+  module * { export * }
+}
