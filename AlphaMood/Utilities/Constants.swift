@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import Firebase
+let REF_FOR_MOBILE = Firestore.firestore().collection("forMobile") 
+let REF_FROM_ML = Firestore.firestore().collection("fromML")
+
+let KEY_USER_ID = "userID"
+let KEY_DATE = "date"
+let KEY_NUMBER =  "number"
+let KEY_COMMENT = "comment"
+
+let PATH_MONTH = "months"
+let PATH_STATISTICS = "statistics"
+let PATH_NUMBER = "number"

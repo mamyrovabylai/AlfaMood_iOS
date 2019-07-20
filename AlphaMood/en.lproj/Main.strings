@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "What is your mood now, darling?"; ObjectID = "0OO-uE-e09"; */
+"0OO-uE-e09.text" = "What is your mood now, darling?";
+
+/* Class = "UILabel"; text = "Why your mood is positive?"; ObjectID = "B8w-Gf-H6M"; */
+"B8w-Gf-H6M.text" = "Why your mood is positive?";
+
+/* Class = "UIButton"; normalTitle = "Дальше"; ObjectID = "Csk-b1-ZEH"; */
+"Csk-b1-ZEH.normalTitle" = "Дальше";
+
+/* Class = "UIButton"; normalTitle = "Готово"; ObjectID = "LQq-ug-SMC"; */
+"LQq-ug-SMC.normalTitle" = "Готово";

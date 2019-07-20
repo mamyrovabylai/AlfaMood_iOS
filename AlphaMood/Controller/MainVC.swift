@@ -16,7 +16,7 @@ class MainVC: UIViewController, SmoothPickerViewDelegate, SmoothPickerViewDataSo
     private var userID: String!
     
     private var views = [UIImageView]()
-    private let images = ["neutral", "neutral", "neutral"]
+    private let images = ["neutral", "smile", "angry"]
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
@@ -24,7 +24,7 @@ class MainVC: UIViewController, SmoothPickerViewDelegate, SmoothPickerViewDataSo
         
         for i in 0...2{
             let view = UIImageView(image: UIImage(named: images[i]))
-            view.frame.size = CGSize(width: 250, height: 180)
+            view.frame.size = CGSize(width: 180, height: 180)
             views.append(view)
         }
         
@@ -49,14 +49,16 @@ class MainVC: UIViewController, SmoothPickerViewDelegate, SmoothPickerViewDataSo
         return views[index]
     }
     @IBAction func nextTapped(_ sender: Any) {
-        performSegue(withIdentifier: "mainGoComment", sender: [pickedIndex, userID])
+        let person = Person(userID: self.userID, pickedIndex: pickedIndex)
+        performSegue(withIdentifier: "mainGoComment", sender: person)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mainGoComment", let destination = segue.destination as? CommentVC {
-            if let sender = sender as? Array<Any>{
-                destination.pickedIndex = sender[0] as? Int ?? 0
-                destination.userID = sender[1] as? String ?? ""
+            if let person = sender as? Person {
+                destination.person = person
+            } else {
+                print("!!!Can not trnsfer person to the CommentVC")
             }
             
         }

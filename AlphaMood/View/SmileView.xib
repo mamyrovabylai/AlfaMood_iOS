@@ -27,6 +27,10 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="iqM-Yn-pb3" firstAttribute="centerY" secondItem="tdm-Kj-qUJ" secondAttribute="centerY" id="EFc-Qt-yd1"/>
+                <constraint firstItem="iqM-Yn-pb3" firstAttribute="top" secondItem="tdm-Kj-qUJ" secondAttribute="top" constant="20" id="HLr-tV-DCb"/>
+                <constraint firstItem="iqM-Yn-pb3" firstAttribute="leading" secondItem="Kzr-FR-cgS" secondAttribute="leading" constant="20" id="Hba-z5-L5p"/>
+                <constraint firstItem="Kzr-FR-cgS" firstAttribute="trailing" secondItem="iqM-Yn-pb3" secondAttribute="trailing" constant="20" id="Lzv-hx-wA3"/>
+                <constraint firstAttribute="bottom" secondItem="iqM-Yn-pb3" secondAttribute="bottom" constant="20" id="Ukm-7W-TjV"/>
                 <constraint firstItem="iqM-Yn-pb3" firstAttribute="centerX" secondItem="tdm-Kj-qUJ" secondAttribute="centerX" id="etW-Zp-8XA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
