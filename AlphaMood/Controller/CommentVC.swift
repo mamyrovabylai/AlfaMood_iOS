@@ -69,7 +69,14 @@ class CommentVC: UIViewController {
     }
     
     func updateDate(){
-        UserDefaults.standard.set(Date(), forKey: "AlfaBankUserDate")
+        Person.getTimeFromServer { (date) in
+            guard let currentDate = date else {
+                print("Error in getting date from server")
+                return
+            }
+            UserDefaults.standard.set(currentDate, forKey: "AlfaBankUserDate")
+        }
+        
     }
     
     

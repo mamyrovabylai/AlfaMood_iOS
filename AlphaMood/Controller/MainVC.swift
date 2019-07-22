@@ -91,11 +91,24 @@ class MainVC: UIViewController, CommentDelegate{
     func checkAllowence() {
         
         if let lastDate = UserDefaults.standard.object(forKey: "AlfaBankUserDate") as? Date {
-            if  Date().timeIntervalSince(lastDate) > 59{
-                self.enableButton()
-            } else {
-                fireTimer(left: Int(60 - Date().timeIntervalSince(lastDate)) )
+            Person.getTimeFromServer { (date) in
+                guard let currentDate = date else {
+                    print("Error in getting time from server")
+                    return
+                }
+                
+                
+                if currentDate.timeIntervalSince(lastDate) > 59 {
+                    DispatchQueue.main.async {
+                        self.enableButton()
+                    }
+                }  else {
+                    DispatchQueue.main.async {
+                        self.fireTimer(left: Int(60 - Date().timeIntervalSince(lastDate)) )
+                    }
+                }
             }
+            
         } else {
             self.enableButton()
         }
@@ -113,20 +126,7 @@ class MainVC: UIViewController, CommentDelegate{
         performSegue(withIdentifier: "mainGoComment", sender: self.person)
     }
     
-//    func getTimeFromServer(completionHandler:@escaping (_ getResDate: Date?) -> Void){
-//        let url = URL(string: "https://www.apple.com")
-//        let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
-//            let httpResponse = response as? HTTPURLResponse
-//            if let contentType = httpResponse!.allHeaderFields["Date"] as? String {
-//                //print(httpResponse)
-//                let dFormatter = DateFormatter()
-//                dFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss z"
-//                let serverTime = dFormatter.date(from: contentType)
-//                completionHandler(serverTime)
-//            }
-//        }
-//        task.resume()
-//    }
+    
     
     
     // Navigation

@@ -116,5 +116,20 @@ class Person {
         
     }
     
+    static func getTimeFromServer(completionHandler:@escaping (_ getResDate: Date?) -> Void){
+        let url = URL(string: "https://www.apple.com")
+        let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+            let httpResponse = response as? HTTPURLResponse
+            if let contentType = httpResponse!.allHeaderFields["Date"] as? String {
+                //print(httpResponse)
+                let dFormatter = DateFormatter()
+                dFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss z"
+                let serverTime = dFormatter.date(from: contentType)
+                completionHandler(serverTime)
+            }
+        }
+        task.resume()
+    }
+    
     
 }
