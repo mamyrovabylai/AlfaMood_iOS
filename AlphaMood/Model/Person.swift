@@ -11,6 +11,7 @@ import Firebase
 class Person {
     private(set) var userID: String!
     private(set) var pickedIndex: Int!
+    private(set) var documentID: String? = nil
     
     
     init(userID: String, pickedIndex: Int){
@@ -18,7 +19,11 @@ class Person {
         self.pickedIndex = pickedIndex
     }
     
-    func isWriteAllowed(completion: @escaping(Bool, String?)-> Void){
+    func changePickedIndex(index: Int){
+        self.pickedIndex = index
+    }
+    
+    func isWriteAllowed(completion: @escaping(Bool, Int)-> Void){
         
         REF_FOR_MOBILE.whereField(KEY_USER_ID, isEqualTo: self.userID!).getDocuments { (snapshot, error) in
             if let err = error {
@@ -29,28 +34,23 @@ class Person {
                     return
                 }
                 if snap.documents.count == 0{
-                    completion(true, nil)
+                    completion(true, 0)
                     return
                 } else {
                     guard let userDate = snap.documents[0]["date"] as? Timestamp else {
                         print("Can not get field data from doc")
-                        completion(true, nil)
+                        completion(true, 0)
                         return
                     }
                     let nowDate = Date()
                     let now = Timestamp(date: nowDate).seconds
                     if (now - userDate.seconds > 10799) {
                         let documentID = snap.documents[0].documentID
-                        completion(true,documentID)
+                        self.documentID = documentID
+                        completion(true, 0)
                         return
                     } else {
-                        let components = DateComponentsFormatter()
-                        components.allowedUnits = [.hour, .minute, .second]
-                            components.unitsStyle = .full
-                        let threeHoursAfter = Date(timeIntervalSince1970: TimeInterval(userDate.seconds)).addingTimeInterval(TimeInterval(10800))
-                        
-                        let string = components.string(from: nowDate, to: threeHoursAfter)
-                        completion(false, string)
+                        completion(false, Int(userDate.seconds + 10800 - now))
                         return
                     }
                 }
@@ -80,6 +80,38 @@ class Person {
         }
         
         ref.document(PATH_NUMBER).setData([KEY_NUMBER: FieldValue.increment(Int64(1))], merge: true)
+        
+        
+    }
+    
+    func getFixedComment(comment: String, completion: @escaping (String)->Void) {
+        let uploadingData = FixComment(comment: comment)
+        do {
+            let jsonUploadingData = try? JSONEncoder().encode(uploadingData)
+            var urlRequest = URLRequest(url: URL(string: URL_ML)!)
+            urlRequest.httpMethod = "POST"
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            let task = URLSession.shared.uploadTask(with: urlRequest, from: jsonUploadingData) { (data, response, error) in
+                if let err = error {
+                    print(err.localizedDescription)
+                    return
+                } else {
+                    guard let response = response as? HTTPURLResponse else {
+                        print("Error in response")
+                        return
+                    }
+                    print(response.statusCode)
+                    
+                    if let jsonUploadedData = data, let uploadedData = try? JSONDecoder().decode(FixComment.self, from: jsonUploadedData) {
+                        completion(uploadedData.comment)
+                    }
+                }
+            }
+            task.resume()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         
         
     }

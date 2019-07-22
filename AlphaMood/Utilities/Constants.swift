@@ -29,3 +29,5 @@ let TEXT_POSITIVE = "Почему вы себя чувствуете так хо
 let TEXT_NEGATIVE = "Почему у вас не такое уж хорошее настроение?"
 
 let TEXTVIEW_PLACEHOLDER = "Если есть коментарий можете оставить, но это не обязательно"
+
+let URL_ML = "http://madiyarmukushev.pythonanywhere.com/comments"

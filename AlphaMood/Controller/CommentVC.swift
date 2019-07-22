@@ -8,6 +8,10 @@
 
 import UIKit
 import Firebase
+
+protocol CommentDelegate {
+    func doCheck(left: Int)
+}
 class CommentVC: UIViewController {
     
     //Outlets
@@ -17,6 +21,7 @@ class CommentVC: UIViewController {
     @IBOutlet weak var label: UILabel!
     //Variables
     var person: Person!
+    var delegate: CommentDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,16 +49,21 @@ class CommentVC: UIViewController {
     
     
     @IBAction func readyTapped(_ sender: Any) {
-        person.isWriteAllowed { (response, documentID) in
-            if response {
-                let comment = self.textView.text
-                self.person.writeComment(comment: comment ?? "", documentID: documentID)
-            } else {
-                let alert = UIAlertController(title: "Терпение", message: "Комментарий можно повторно отправлять по истечению трех часов :) \n У вас осталось \(documentID!)", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Хорошо", style: .cancel, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
+       
+                if let comment = self.textView.text{
+                    self.person.getFixedComment(comment: comment, completion: { (comment) in
+                        self.person.writeComment(comment: comment, documentID: self.person.documentID)
+                    })
+                } else {
+                    self.person.writeComment(comment: "", documentID: self.person.documentID)
+                }
+        
+        textView.text = ""
+        self.delegate?.doCheck(left: 10800)
+        navigationController?.popViewController(animated: true)
+        
+        
+        
         
     }
     
