@@ -63,7 +63,6 @@ class MainVC: UIViewController, CommentDelegate{
     func unableButton() {
         self.buttonNext.isEnabled = false
         self.buttonNext.alpha = 0.3
-        self.timerLabel.text = "Осталось : X"
     }
     func enableButton() {
         self.buttonNext.isEnabled = true
@@ -81,6 +80,7 @@ class MainVC: UIViewController, CommentDelegate{
             if timeLeft == 0 {
                 self.enableButton()
                 timer.invalidate()
+                return
             }
             let string = components.string(from: TimeInterval(timeLeft))
             self.timerLabel.text = "Осталось : \(string!)"
@@ -89,13 +89,15 @@ class MainVC: UIViewController, CommentDelegate{
     }
     
     func checkAllowence() {
-        self.unableButton()
-        person.isWriteAllowed { (allowed, left) in
-            if !allowed {
-                self.fireTimer(left: left)
-            } else {
+        
+        if let lastDate = UserDefaults.standard.object(forKey: "AlfaBankUserDate") as? Date {
+            if  Date().timeIntervalSince(lastDate) > 59{
                 self.enableButton()
+            } else {
+                fireTimer(left: Int(60 - Date().timeIntervalSince(lastDate)) )
             }
+        } else {
+            self.enableButton()
         }
     }
     func doCheck(left: Int) {
@@ -104,10 +106,28 @@ class MainVC: UIViewController, CommentDelegate{
     }
     
     
+    
+    
     @IBAction func nextTapped(_ sender: Any) {
         
         performSegue(withIdentifier: "mainGoComment", sender: self.person)
     }
+    
+//    func getTimeFromServer(completionHandler:@escaping (_ getResDate: Date?) -> Void){
+//        let url = URL(string: "https://www.apple.com")
+//        let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+//            let httpResponse = response as? HTTPURLResponse
+//            if let contentType = httpResponse!.allHeaderFields["Date"] as? String {
+//                //print(httpResponse)
+//                let dFormatter = DateFormatter()
+//                dFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss z"
+//                let serverTime = dFormatter.date(from: contentType)
+//                completionHandler(serverTime)
+//            }
+//        }
+//        task.resume()
+//    }
+    
     
     // Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

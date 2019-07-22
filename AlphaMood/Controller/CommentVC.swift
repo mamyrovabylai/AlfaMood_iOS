@@ -59,12 +59,17 @@ class CommentVC: UIViewController {
                 }
         
         textView.text = ""
-        self.delegate?.doCheck(left: 10800)
+        updateDate()
+        self.delegate?.doCheck(left: 60)
         navigationController?.popViewController(animated: true)
         
         
         
         
+    }
+    
+    func updateDate(){
+        UserDefaults.standard.set(Date(), forKey: "AlfaBankUserDate")
     }
     
     
