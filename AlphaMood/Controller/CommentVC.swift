@@ -50,7 +50,7 @@ class CommentVC: UIViewController {
     
     @IBAction func readyTapped(_ sender: Any) {
        
-                if let comment = self.textView.text{
+                if let comment = self.textView.text {
                     self.person.getFixedComment(comment: comment, completion: { (comment) in
                         self.person.writeComment(comment: comment, documentID: self.person.documentID)
                     })
@@ -75,6 +75,7 @@ class CommentVC: UIViewController {
                 return
             }
             UserDefaults.standard.set(currentDate, forKey: "AlfaBankUserDate")
+            UserDefaults.standard.synchronize()
         }
         
     }

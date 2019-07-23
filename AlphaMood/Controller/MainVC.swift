@@ -32,14 +32,17 @@ class MainVC: UIViewController, CommentDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkAllowence()
        
         viewForLabel.layer.cornerRadius = 8
         buttonNext.layer.cornerRadius = 8
         
+        
+        
         for image in images{
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: 240, height: 240))
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
             let imageView = UIImageView(image: UIImage(named: image))
-            imageView.frame = CGRect(x: 40, y: 40, width: 160, height: 160)
+            imageView.frame = CGRect(x: 40, y: 40, width: 120, height: 120)
             view.addSubview(imageView)
             views.append(view)
         }
@@ -54,7 +57,7 @@ class MainVC: UIViewController, CommentDelegate{
             self.person = Person(userID: saveUserId(), pickedIndex: 1)
         }
         
-         checkAllowence()
+        
         
     }
     
@@ -77,7 +80,7 @@ class MainVC: UIViewController, CommentDelegate{
         components.unitsStyle = .full
         var timeLeft = left
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
-            if timeLeft == 0 {
+            if timeLeft < 1 {
                 self.enableButton()
                 timer.invalidate()
                 return
@@ -85,17 +88,25 @@ class MainVC: UIViewController, CommentDelegate{
             let string = components.string(from: TimeInterval(timeLeft))
             self.timerLabel.text = "Осталось : \(string!)"
             timeLeft -= 1
-        }
+        }.fire()
     }
     
     func checkAllowence() {
-        
+        unableButton()
         if let lastDate = UserDefaults.standard.object(forKey: "AlfaBankUserDate") as? Date {
+            let startDate = Date()
             Person.getTimeFromServer { (date) in
+                
                 guard let currentDate = date else {
-                    print("Error in getting time from server")
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: "Соединение прервано", message: "Убедитесь что вы подключены к интернету", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Хорошо", style: .cancel, handler: nil))
+                        self.present(alert, animated: true)
+                    }
                     return
                 }
+                print(Date().timeIntervalSince(startDate))
+                print("!!!!")
                 
                 
                 if currentDate.timeIntervalSince(lastDate) > 59 {
@@ -119,12 +130,35 @@ class MainVC: UIViewController, CommentDelegate{
     }
     
     
+    @IBAction func swiped(_ sender: UISwipeGestureRecognizer) {
+//        if sender.direction == .left {
+//            picker.navigate(direction: .pervious)
+//        } else if sender.direction == .right {
+//            picker.navigate(direction: .next)
+//        }
+    }
+    
+    @IBAction func swipeTapped(_ sender: UIButton) {
+        
+        if sender.tag == 0{
+            picker.navigate(direction: .pervious)
+        } else {
+            picker.navigate(direction: .next)
+        }
+    }
+    
+    
+    
+    
     
     
     @IBAction func nextTapped(_ sender: Any) {
         
         performSegue(withIdentifier: "mainGoComment", sender: self.person)
     }
+    
+    
+    
     
     
     
@@ -149,6 +183,7 @@ extension MainVC {
     func saveUserId() -> String{
         let userID = UUID().uuidString
         UserDefaults.standard.set(userID, forKey: "AlfaBankUserID")
+        UserDefaults.standard.synchronize()
         return userID
         
     }

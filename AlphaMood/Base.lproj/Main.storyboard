@@ -38,12 +38,30 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3M-lR-EHn" customClass="SmoothPickerView" customModule="SmoothPicker">
-                                <rect key="frame" x="0.0" y="328" width="414" height="240"/>
+                                <rect key="frame" x="40" y="328" width="334" height="223"/>
                                 <color key="backgroundColor" red="0.63921568630000003" green="0.1215686275" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="Mmg-VT-Ap5"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fEu-up-Y1s" appends="YES" id="S9Z-KW-5bz"/>
+                                </connections>
                             </view>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJf-Gc-VAr">
+                                <rect key="frame" x="321" y="575" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Fq1-e5-Neg"/>
+                                    <constraint firstAttribute="height" constant="40" id="aBA-op-qbC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <state key="normal" backgroundImage="play-button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="swipeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZLm-t4-Fps"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csk-b1-ZEH">
                                 <rect key="frame" x="40" y="742" width="334" height="70"/>
                                 <color key="backgroundColor" red="0.47614024431612273" green="0.64183825254440308" blue="0.45149347455621985" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,27 +77,45 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hZ-qp-Iie">
-                                <rect key="frame" x="40" y="832" width="334" height="21"/>
+                                <rect key="frame" x="40" y="832" width="334" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lir-NG-F7F">
+                                <rect key="frame" x="40" y="575" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YqE-A9-zxt"/>
+                                    <constraint firstAttribute="width" constant="40" id="zmS-yG-Med"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <state key="normal" backgroundImage="play-button — копия">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="swipeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PWP-Vg-tbU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.1215686275" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="lir-NG-F7F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5Ut-jV-cJL"/>
                             <constraint firstItem="Csk-b1-ZEH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="8VA-LF-U2c"/>
                             <constraint firstItem="W3M-lR-EHn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9xV-DX-BIp"/>
                             <constraint firstItem="7hZ-qp-Iie" firstAttribute="top" secondItem="Csk-b1-ZEH" secondAttribute="bottom" constant="20" id="D69-4g-UUZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Csk-b1-ZEH" secondAttribute="trailing" constant="40" id="MZd-5i-CxE"/>
-                            <constraint firstItem="W3M-lR-EHn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OdK-w9-dwj"/>
                             <constraint firstItem="yPh-sw-o4W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="PLL-pa-A4a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Csk-b1-ZEH" secondAttribute="bottom" constant="50" id="R7J-XY-DHq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yPh-sw-o4W" secondAttribute="trailing" constant="40" id="VC6-aU-uLC"/>
                             <constraint firstItem="7hZ-qp-Iie" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="YVq-4l-cVh"/>
+                            <constraint firstItem="W3M-lR-EHn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bH3-Cu-A1e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7hZ-qp-Iie" secondAttribute="trailing" constant="40" id="cBC-QH-B57"/>
                             <constraint firstItem="W3M-lR-EHn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eXm-T3-okY"/>
                             <constraint firstItem="yPh-sw-o4W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="fxh-O2-CGU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zJf-Gc-VAr" secondAttribute="trailing" id="gOJ-z4-07p"/>
                             <constraint firstItem="W3M-lR-EHn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jeF-ee-qn5"/>
+                            <constraint firstItem="lir-NG-F7F" firstAttribute="top" secondItem="W3M-lR-EHn" secondAttribute="bottom" constant="20" id="k5e-i8-oXa"/>
+                            <constraint firstItem="zJf-Gc-VAr" firstAttribute="top" secondItem="W3M-lR-EHn" secondAttribute="bottom" constant="20" id="u5C-Oh-hvT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -93,6 +129,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="fEu-up-Y1s">
+                    <connections>
+                        <action selector="swiped:" destination="BYZ-38-t0r" id="MqZ-kF-I1S"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="112.5"/>
         </scene>
@@ -201,4 +242,8 @@
             <point key="canvasLocation" x="52" y="113"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play-button" width="512" height="512"/>
+        <image name="play-button — копия" width="512" height="512"/>
+    </resources>
 </document>
