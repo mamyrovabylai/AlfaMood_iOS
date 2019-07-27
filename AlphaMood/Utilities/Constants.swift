@@ -14,6 +14,8 @@ let REF_FROM_ML = Firestore.firestore().collection("fromML")
 let KEY_USER_ID = "userID"
 let KEY_DATE = "date"
 let KEY_NUMBER =  "number"
+
+let KEY_NUMBER2 =  "_number_"
 let KEY_COMMENT = "comment"
 
 let PATH_MONTH = "months"
@@ -24,10 +26,10 @@ let NAME_IMG_NEUTRAL = "neutral"
 let NAME_IMG_POSITIVE = "smile"
 let NAME_IMG_NEGATIVE = "angry"
 
-let TEXT_NEUTRAL = "О чем бы вы хотели с нами поделиться, но это на вас никак не влияет?"
+let TEXT_NEUTRAL = "О чем бы вы хотели с нами поделиться?"
 let TEXT_POSITIVE = "Почему вы себя чувствуете так хорошо? :)"
 let TEXT_NEGATIVE = "Почему у вас не такое уж хорошее настроение?"
 
-let TEXTVIEW_PLACEHOLDER = "Если есть коментарий можете оставить, но это не обязательно"
+let TEXTVIEW_PLACEHOLDER = "Если есть коментарий можете оставить"
 
 let URL_ML = "http://madiyarmukushev.pythonanywhere.com/comments"

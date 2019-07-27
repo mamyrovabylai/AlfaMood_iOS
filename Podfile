@@ -7,6 +7,7 @@ target 'AlphaMood' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'SmoothPicker'
+  pod 'Hashtags'
 # Pods for AlphaMood
 
 end

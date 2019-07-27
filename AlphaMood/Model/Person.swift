@@ -11,78 +11,87 @@ import Firebase
 class Person {
     private(set) var userID: String!
     private(set) var pickedIndex: Int!
-    private(set) var documentID: String? = nil
     
-    
+    var listener: ListenerRegistration!
     init(userID: String, pickedIndex: Int){
         self.userID = userID
         self.pickedIndex = pickedIndex
     }
-    
     func changePickedIndex(index: Int){
         self.pickedIndex = index
     }
     
-    func isWriteAllowed(completion: @escaping(Bool, Int)-> Void){
-        
-        REF_FOR_MOBILE.whereField(KEY_USER_ID, isEqualTo: self.userID!).getDocuments { (snapshot, error) in
-            if let err = error {
-                print(err.localizedDescription)
-            } else {
-                guard let snap = snapshot else {
-                    print("Error in getting snapshot")
-                    return
-                }
-                if snap.documents.count == 0{
-                    completion(true, 0)
-                    return
-                } else {
-                    guard let userDate = snap.documents[0]["date"] as? Timestamp else {
-                        print("Can not get field data from doc")
-                        completion(true, 0)
-                        return
-                    }
-                    let nowDate = Date()
-                    let now = Timestamp(date: nowDate).seconds
-                    if (now - userDate.seconds > 10799) {
-                        let documentID = snap.documents[0].documentID
-                        self.documentID = documentID
-                        completion(true, 0)
-                        return
-                    } else {
-                        completion(false, Int(userDate.seconds + 10800 - now))
-                        return
-                    }
-                }
-                
-            }
-        }
-    }
     
-    func writeComment(comment: String, documentID: String?){
-        let now = Date()
-        if let documentID = documentID{
-            REF_FOR_MOBILE.document(documentID).setData([KEY_DATE: now], merge: true)
-        } else {
-            REF_FOR_MOBILE.addDocument(data: [KEY_DATE: now, KEY_USER_ID: self.userID!])
-        }
-        
-        let components = Calendar.current.dateComponents([.day, .month, .year], from: Date(timeIntervalSince1970: TimeInterval(Timestamp(date: now).seconds)))
-        print(components.day!, components.month!, components.year!)
-        
+    func writeComment(comment gComment: String){
+        // COnfiguration of reference
+        let components = Calendar.current.dateComponents([.day, .month, .year], from: Date(timeIntervalSince1970: TimeInterval(Timestamp(date: Date()).seconds)))
         let ref = REF_FROM_ML.document(String(components.year!))
             .collection(PATH_MONTH).document(String(components.month!))
             .collection(PATH_STATISTICS).document(String(components.day!))
-            .collection("\(self.pickedIndex!)mood")
+        let curRef = ref.collection("\(self.pickedIndex!)mood")
         
-        if comment != ""{
-            ref.addDocument(data: [KEY_COMMENT: comment])
+        
+        // update or set mood // done but govnocode
+        if let lastDate = UserDefaults.standard.object(forKey: "AlfaBankUserDate") as? Date {
+            let lastDay = Calendar.current.dateComponents([.day], from: lastDate)
+            let lastMood = UserDef.getMood()
+            if ((lastDay.day!) == (components.day!)){
+                if (lastMood != self.pickedIndex) {
+                    let lastRef = ref.collection("\(lastMood)mood")
+                    lastRef.document(PATH_NUMBER).setData([KEY_NUMBER2: FieldValue.increment(Int64(-1))], merge: true)
+                    
+                    
+                    UserDef.updateDate()
+                    UserDef.updateMood(mood: self.pickedIndex)
+                    curRef.document(PATH_NUMBER).setData([KEY_NUMBER2: FieldValue.increment(Int64(1))], merge: true)
+                } else {
+                    UserDef.updateDate()
+                }
+            } else {
+                UserDef.updateDate()
+                UserDef.updateMood(mood: self.pickedIndex)
+                curRef.document(PATH_NUMBER).setData([KEY_NUMBER2: FieldValue.increment(Int64(1))], merge: true)
+            }
+        } else {
+            UserDef.updateDate()
+            UserDef.updateMood(mood: self.pickedIndex)
+            curRef.document(PATH_NUMBER).setData([KEY_NUMBER2: FieldValue.increment(Int64(1))], merge: true)
         }
         
-        ref.document(PATH_NUMBER).setData([KEY_NUMBER: FieldValue.increment(Int64(1))], merge: true)
+        
+        // found existing comment and increased the counter
+        var comment = gComment
+        var key_num = KEY_NUMBER
+        if comment == ""{
+            comment = "NO COMMENT"
+            key_num = KEY_NUMBER2
+        }
+        curRef.whereField(KEY_COMMENT, isEqualTo: comment).getDocuments { (snapshot, error) in
+            if let err = error {
+                print(err.localizedDescription)
+                return
+            } else {
+                guard let snap = snapshot else {
+                    print("SNAP")
+                    return
+                }
+                
+                if snap.documents.count == 0 {
+                    curRef.addDocument(data: [KEY_COMMENT: comment,key_num: 1])
+                } else {
+                    let docID = snap.documents[0].documentID
+                    curRef.document(docID).updateData([key_num: FieldValue.increment(Int64(1))])
+                }
+            }
+        }
         
         
     }
+    
+    
+    
+    
+    
     
     func getFixedComment(comment: String, completion: @escaping (String)->Void) {
         let uploadingData = FixComment(comment: comment)
@@ -116,24 +125,38 @@ class Person {
         
     }
     
-    static func getTimeFromServer(completionHandler:@escaping (_ getResDate: Date?) -> Void){
-        let url = URL(string: "https://www.apple.com")
-        let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+    func getTopFive(completion: @escaping([String]?)->()){
+        let components = Calendar.current.dateComponents([.day, .month, .year], from: Date(timeIntervalSince1970: TimeInterval(Timestamp(date: Date()).seconds)))
+        let ref = REF_FROM_ML.document(String(components.year!))
+            .collection(PATH_MONTH).document(String(components.month!))
+            .collection(PATH_STATISTICS).document(String(components.day!)).collection("\(self.pickedIndex!)mood")
+        if let _ = listener {
+            self.listener.remove()
+        }
+        self.listener = ref.order(by: KEY_NUMBER, descending: true).limit(to: 5).addSnapshotListener{ (snapshot, error) in
             if let error = error {
-                completionHandler(nil)
+                print(error.localizedDescription)
+                return
             } else {
-            let httpResponse = response as? HTTPURLResponse
-                if let contentType = httpResponse!.allHeaderFields["Date"] as? String {
-                    //print(httpResponse)
-                    let dFormatter = DateFormatter()
-                    dFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss z"
-                    let serverTime = dFormatter.date(from: contentType)
-                    completionHandler(serverTime)
+                guard let snap = snapshot else {
+                    print("Error in guard")
+                    return
+                }
+                if snap.documents.count == 0{
+                    completion(nil)
+                } else {
+                    var top5 = [String]()
+                    for doc in snap.documents{
+                        if let comment = doc[KEY_COMMENT] as? String{
+                            top5.append(comment)
+                        }
+                    }
+                    completion(top5)
                 }
             }
         }
-        task.resume()
     }
+    
     
     
 }
