@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseFirestore
 class Person {
     private(set) var userID: String!
     private(set) var pickedIndex: Int!

@@ -19,8 +19,10 @@
 		1BB3C32622DDF45D0042A6E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3C32522DDF45D0042A6E3 /* Constants.swift */; };
 		1BB3C33422DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BB3C33322DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets */; };
 		1BE504B122EB1EB6003893B8 /* PinCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504B022EB1EB6003893B8 /* PinCodeVC.swift */; };
-		1BE504B322EC1A06003893B8 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504B222EC1A06003893B8 /* ButtonView.swift */; };
-		AE5787BEF248192AA9B49E57 /* libPods-AlphaMood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF321D582270A6A376A13B3A /* libPods-AlphaMood.a */; };
+		1BE504B522EC3EBA003893B8 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504B422EC3EBA003893B8 /* NumberButton.swift */; };
+		1BE504BD22EC6038003893B8 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504BC22EC6038003893B8 /* CircleView.swift */; };
+		1BF36A1222EDEF2A0026ABE6 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF36A1122EDEF2A0026ABE6 /* MainVM.swift */; };
+		8A44D1D992A155F437EEC311 /* libPods-AlphaMood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA52F15CD4F35C4B30D18B30 /* libPods-AlphaMood.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,7 @@
 		1B92610522E3A5880038054A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1B98807222E0B03A00E5C9FE /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		1BA0FEC722E4951E0032D9DB /* JsonStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonStructures.swift; sourceTree = "<group>"; };
+		1BB2C5EE22EDB44100FAE302 /* AlphaMood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlphaMood.entitlements; sourceTree = "<group>"; };
 		1BB3C30822DDEFF60042A6E3 /* AlphaMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BB3C30B22DDEFF60042A6E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BB3C30D22DDEFF60042A6E3 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -43,9 +46,11 @@
 		1BB3C32522DDF45D0042A6E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1BB3C33322DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 19-48-47-177.xcassets"; sourceTree = "<group>"; };
 		1BE504B022EB1EB6003893B8 /* PinCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeVC.swift; sourceTree = "<group>"; };
-		1BE504B222EC1A06003893B8 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		1BE504B422EC3EBA003893B8 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
+		1BE504BC22EC6038003893B8 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		1BF36A1122EDEF2A0026ABE6 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
 		6DED171E13EDA87E743CD388 /* Pods-AlphaMood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaMood.release.xcconfig"; path = "Target Support Files/Pods-AlphaMood/Pods-AlphaMood.release.xcconfig"; sourceTree = "<group>"; };
-		AF321D582270A6A376A13B3A /* libPods-AlphaMood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlphaMood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA52F15CD4F35C4B30D18B30 /* libPods-AlphaMood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlphaMood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE5787BEF248192AA9B49E57 /* libPods-AlphaMood.a in Frameworks */,
+				8A44D1D992A155F437EEC311 /* libPods-AlphaMood.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,16 +86,15 @@
 		1BB3C30A22DDEFF60042A6E3 /* AlphaMood */ = {
 			isa = PBXGroup;
 			children = (
-				1BB3C32422DDF44F0042A6E3 /* Utilities */,
+				1BF36A0F22EDEEC10026ABE6 /* ViewModel */,
+				1BB2C5EE22EDB44100FAE302 /* AlphaMood.entitlements */,
 				1BB3C32322DDF43D0042A6E3 /* Model */,
 				1BB3C32222DDF4380042A6E3 /* View */,
 				1BB3C32122DDF4320042A6E3 /* Controller */,
-				1BB3C30B22DDEFF60042A6E3 /* AppDelegate.swift */,
-				1BB3C30F22DDEFF60042A6E3 /* Main.storyboard */,
-				1BB3C31422DDEFF80042A6E3 /* LaunchScreen.storyboard */,
 				1BB3C31722DDEFF80042A6E3 /* Info.plist */,
 				1BB3C31F22DDF32A0042A6E3 /* GoogleService-Info.plist */,
-				1BB3C33322DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets */,
+				1BB3C32422DDF44F0042A6E3 /* Resources */,
+				1BB3C30B22DDEFF60042A6E3 /* AppDelegate.swift */,
 			);
 			path = AlphaMood;
 			sourceTree = "<group>";
@@ -108,7 +112,9 @@
 		1BB3C32222DDF4380042A6E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1BE504B222EC1A06003893B8 /* ButtonView.swift */,
+				1BB3C30F22DDEFF60042A6E3 /* Main.storyboard */,
+				1BE504BC22EC6038003893B8 /* CircleView.swift */,
+				1BE504B422EC3EBA003893B8 /* NumberButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +122,7 @@
 		1BB3C32322DDF43D0042A6E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BF36A1322EDEF310026ABE6 /* StartPage */,
 				1B92610022E3875B0038054A /* Person.swift */,
 				1BA0FEC722E4951E0032D9DB /* JsonStructures.swift */,
 				1B83A82122E771E3004B56DE /* UserDefTimer.swift */,
@@ -123,12 +130,37 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1BB3C32422DDF44F0042A6E3 /* Utilities */ = {
+		1BB3C32422DDF44F0042A6E3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				1BB3C32522DDF45D0042A6E3 /* Constants.swift */,
+				1BB3C31422DDEFF80042A6E3 /* LaunchScreen.storyboard */,
+				1BB3C33322DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets */,
 			);
-			path = Utilities;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1BF36A0F22EDEEC10026ABE6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1BF36A1022EDEF0B0026ABE6 /* StartPage */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1BF36A1022EDEF0B0026ABE6 /* StartPage */ = {
+			isa = PBXGroup;
+			children = (
+				1BF36A1122EDEF2A0026ABE6 /* MainVM.swift */,
+			);
+			path = StartPage;
+			sourceTree = "<group>";
+		};
+		1BF36A1322EDEF310026ABE6 /* StartPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StartPage;
 			sourceTree = "<group>";
 		};
 		3C5D4C8226CC5B77E2DBA176 /* Pods */ = {
@@ -143,7 +175,7 @@
 		9DA4F13EFCC31E32F8B6FA72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AF321D582270A6A376A13B3A /* libPods-AlphaMood.a */,
+				CA52F15CD4F35C4B30D18B30 /* libPods-AlphaMood.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,7 +191,7 @@
 				1BB3C30422DDEFF60042A6E3 /* Sources */,
 				1BB3C30522DDEFF60042A6E3 /* Frameworks */,
 				1BB3C30622DDEFF60042A6E3 /* Resources */,
-				DE7EE8F902FB2CDC5F8DD529 /* [CP] Copy Pods Resources */,
+				470F596266BC35378B7A3BBE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,6 +214,11 @@
 				TargetAttributes = {
 					1BB3C30722DDEFF60042A6E3 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -219,29 +256,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C54C85D003D347E7712B2895 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AlphaMood-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE7EE8F902FB2CDC5F8DD529 /* [CP] Copy Pods Resources */ = {
+		470F596266BC35378B7A3BBE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,6 +282,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlphaMood/Pods-AlphaMood-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C54C85D003D347E7712B2895 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlphaMood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -280,9 +317,11 @@
 				1B98807322E0B03A00E5C9FE /* CommentVC.swift in Sources */,
 				1BB3C30C22DDEFF60042A6E3 /* AppDelegate.swift in Sources */,
 				1BE504B122EB1EB6003893B8 /* PinCodeVC.swift in Sources */,
+				1BE504BD22EC6038003893B8 /* CircleView.swift in Sources */,
+				1BF36A1222EDEF2A0026ABE6 /* MainVM.swift in Sources */,
 				1B83A82222E771E3004B56DE /* UserDefTimer.swift in Sources */,
 				1BB3C32622DDF45D0042A6E3 /* Constants.swift in Sources */,
-				1BE504B322EC1A06003893B8 /* ButtonView.swift in Sources */,
+				1BE504B522EC3EBA003893B8 /* NumberButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +474,7 @@
 			baseConfigurationReference = 0C296E16527C1D8F3E46FDEF /* Pods-AlphaMood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AlphaMood/AlphaMood.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PGH5NL8BP2;
 				INFOPLIST_FILE = AlphaMood/Info.plist;
@@ -454,6 +494,7 @@
 			baseConfigurationReference = 6DED171E13EDA87E743CD388 /* Pods-AlphaMood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AlphaMood/AlphaMood.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PGH5NL8BP2;
 				INFOPLIST_FILE = AlphaMood/Info.plist;

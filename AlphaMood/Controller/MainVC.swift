@@ -8,26 +8,31 @@
 
 import UIKit
 import SmoothPicker
-
 class MainVC: UIViewController{
+    
+    var mainVM: MainVM {
+        didSet{
+            //
+        }
+    }
     
     //Outlets
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var viewForLabel: UIView!
     @IBOutlet weak var picker: SmoothPickerView!
     @IBOutlet weak var buttonNext: UIButton!
-    var person: Person!
-    var userDef: UserDef = UserDef()
+    var person: Person! //
+    var userDef: UserDef = UserDef() //
     
     //Variables
     private var views = [UIView]()
     private let images = [NAME_IMG_NEUTRAL, NAME_IMG_POSITIVE, NAME_IMG_NEGATIVE]
-    
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         //UserDef.savePin(pin: "1234")
         if !UserDef.getUserPinned() {
-            self.performSegue(withIdentifier: "mainGoPinCode", sender: nil)
+           self.performSegue(withIdentifier: "mainGoPinCode", sender: nil)
         }
         
         //

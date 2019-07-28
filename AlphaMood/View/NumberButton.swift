@@ -1,5 +1,5 @@
 //
-//  ButtonView.swift
+//  NumberButton.swift
 //  AlphaMood
 //
 //  Created by Абылайхан on 7/27/19.
@@ -7,16 +7,10 @@
 //
 
 import UIKit
-protocol ButtonViewDelegate {
-    func buttonTapped(number: String)
-}
-@IBDesignable
-class ButtonView: UIView {
 
-    @IBOutlet weak var label: UILabel!
-    @IBInspectable var number: String!
+class NumberButton: UIButton {
+
     var path: UIBezierPath!
-    var delegate: ButtonViewDelegate?
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -37,25 +31,9 @@ class ButtonView: UIView {
         
     }
     
-    func getCirclePath(rect: CGRect) -> UIBezierPath {
-        let path = UIBezierPath(ovalIn: rect)
-        return path
-        
-    }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let hitted = touches.contains { (touch) -> Bool in
-            let point = touch.location(in: self)
-            if self.path.contains(point){
-                return true
-            }
-            return false
-        }
-        if hitted {
-            self.delegate?.buttonTapped(number: self.number)
-        }
-        
-    }
+    
  
+    
 
 }
