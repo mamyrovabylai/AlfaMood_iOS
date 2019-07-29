@@ -1,5 +1,5 @@
 //
-//  MainVM.swift
+//  PersonModelManager.swift
 //  AlphaMood
 //
 //  Created by Абылайхан on 7/28/19.
@@ -7,9 +7,3 @@
 //
 
 import Foundation
-
-class MainVM{
-    var imageNames: [String]
-    
-    
-}
