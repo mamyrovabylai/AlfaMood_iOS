@@ -12,4 +12,8 @@ struct FixComment: Codable {
     var comment: String
 }
 
+struct FixedComments: Codable{
+    var comment: [String]
+}
+
 

@@ -139,6 +139,7 @@ extension SmoothPickerView :UICollectionViewDelegate, UICollectionViewDataSource
     }
 }
 // Mark : Paging
+
 extension SmoothPickerView :SmoothPickerScrollDelegate {
     internal func scrollToItem(index:Int ) {
         if index >= 0 && index < itemsCount {

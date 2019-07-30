@@ -10,10 +10,12 @@ import UIKit
 import Firebase
 import Hashtags
 protocol CommentDelegate {
-    func doCheck(left: Int)
+    func fire(left: Int, viewModel: MainViewModel)
 }
 
 class CommentVC: UIViewController {
+    var viewModel: SecondPageViewModel!
+    //
     
     @IBOutlet weak var hasttagViewHeight: NSLayoutConstraint!
     
@@ -22,48 +24,33 @@ class CommentVC: UIViewController {
     @IBOutlet weak var readyButton: UIButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var label: UILabel!
-    
-    
     @IBOutlet weak var hashtagView: HashtagView!
     
     //Variables
-    var person: Person!
     var delegate: CommentDelegate?
     var top5 = [String]()
     
     override func viewWillDisappear(_ animated: Bool) {
-        if let listener = person.listener {
-            listener.remove()
-        }
+        viewModel.removeListener()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "back")!)
-        
         // Configuration of views
         viewForLabel.layer.cornerRadius = 8
         readyButton.layer.cornerRadius = 8
         textView.layer.cornerRadius = 8
-        textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        textView.textContainerInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         setPlaceholder()
         // texview's delegation
         textView.delegate = self
         hashtagView.delegate = self
         //configuration of view which depends on mood
-        switch person.pickedIndex{
-        case 0:
-            label.text = TEXT_NEUTRAL
-        case 1:
-            label.text = TEXT_POSITIVE
-        case 2:
-            label.text = TEXT_NEGATIVE
-        default:
-            label.text = ""
-        }
-        // Uploading top 5 comments
+        label.text = viewModel.moodTitle
+        // Uploading top 5 comments - NO
         hashtagView.alpha = 1
-        person.getTopFive { (top5) in
+        viewModel.getTopFive { (top5) in
             if let top = top5{
                 self.hashtagView.removeTags()
                 top.forEach({ (comment) in
@@ -80,17 +67,18 @@ class CommentVC: UIViewController {
     }
     
     
-    // Sending a message
+    // Sending a message - NO
     @IBAction func readyTapped(_ sender: Any) {
         if let comment = self.textView.text, textView.textColor != UIColor.darkGray {
-            self.person.getFixedComment(comment: comment, completion: { (comment) in
-                self.person.writeComment(comment: comment)
+            self.viewModel.getFixedComment(comment: comment, completion: { (comments) in
+               self.viewModel.writeComment(comments: comments)
+               
             })
         } else {
-            self.person.writeComment(comment: "")
+            self.viewModel.writeComment(comments: nil)
         }
         self.textView.text = ""
-        self.delegate?.doCheck(left: 60)
+        self.delegate?.fire(left: 60, viewModel: viewModel.mainViewModel())
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -146,7 +134,6 @@ extension CommentVC: HashtagViewDelegate {
     func cellSelected(comment: String) {
         self.textView.text = comment
         textView.textColor = .black
-        
         
     }
 }

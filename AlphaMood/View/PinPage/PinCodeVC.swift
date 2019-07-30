@@ -7,7 +7,15 @@
 //
 
 import UIKit
+
+protocol PinDelegate {
+    func pinWillDismiss(viewModel: MainViewModel)
+}
 class PinCodeVC: UIViewController {
+    
+    var viewModel: PinViewModel!
+    
+    var delegate: PinDelegate?
 
     @IBOutlet weak var circle1: CircleView!
     
@@ -33,14 +41,11 @@ class PinCodeVC: UIViewController {
         counter += 1
         
         if counter == 4 {
-            let rightPassword = "1234"
-            var rightPass = [Int]()
-            rightPassword.forEach { (char) in
-                rightPass.append(Int(String(char))!)
-            }
-            
-            if rightPass == pin {
-                UserDef.UserPinned(mode: true)
+            Pin.savePin(pin: "1379")
+            let rightPassword = viewModel.getPin()
+            if rightPassword == pin {
+                viewModel.pinUser()
+                delegate?.pinWillDismiss(viewModel: viewModel.mainViewModel())
                 self.dismiss(animated: true, completion: nil)
             } else {
                 circles.forEach { (circle) in

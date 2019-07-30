@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B83A82222E771E3004B56DE /* UserDefTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83A82122E771E3004B56DE /* UserDefTimer.swift */; };
-		1B92610122E3875B0038054A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92610022E3875B0038054A /* Person.swift */; };
+		1B83A82222E771E3004B56DE /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83A82122E771E3004B56DE /* Pin.swift */; };
 		1B98807322E0B03A00E5C9FE /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98807222E0B03A00E5C9FE /* CommentVC.swift */; };
 		1BA0FEC822E4951E0032D9DB /* JsonStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0FEC722E4951E0032D9DB /* JsonStructures.swift */; };
 		1BB3C30C22DDEFF60042A6E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3C30B22DDEFF60042A6E3 /* AppDelegate.swift */; };
@@ -21,21 +20,24 @@
 		1BE504B122EB1EB6003893B8 /* PinCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504B022EB1EB6003893B8 /* PinCodeVC.swift */; };
 		1BE504B522EC3EBA003893B8 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504B422EC3EBA003893B8 /* NumberButton.swift */; };
 		1BE504BD22EC6038003893B8 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504BC22EC6038003893B8 /* CircleView.swift */; };
-		1BF36A1222EDEF2A0026ABE6 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF36A1122EDEF2A0026ABE6 /* MainVM.swift */; };
+		1BF36A5A22EE185A0026ABE6 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF36A5922EE185A0026ABE6 /* PersonModel.swift */; };
+		1BF36A5C22EE18EF0026ABE6 /* MoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF36A5B22EE18EF0026ABE6 /* MoodModel.swift */; };
+		1BF36A5E22EE197C0026ABE6 /* PersonModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF36A5D22EE197C0026ABE6 /* PersonModelManager.swift */; };
+		1BF36A6122EE205B0026ABE6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF36A6022EE205B0026ABE6 /* MainViewModel.swift */; };
+		1BF36A6322EE21470026ABE6 /* SecondPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF36A6222EE21470026ABE6 /* SecondPageViewModel.swift */; };
+		1BF36A6822EE33C90026ABE6 /* PinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF36A6722EE33C90026ABE6 /* PinViewModel.swift */; };
 		8A44D1D992A155F437EEC311 /* libPods-AlphaMood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA52F15CD4F35C4B30D18B30 /* libPods-AlphaMood.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C296E16527C1D8F3E46FDEF /* Pods-AlphaMood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaMood.debug.xcconfig"; path = "Target Support Files/Pods-AlphaMood/Pods-AlphaMood.debug.xcconfig"; sourceTree = "<group>"; };
-		1B83A82122E771E3004B56DE /* UserDefTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefTimer.swift; sourceTree = "<group>"; };
-		1B92610022E3875B0038054A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		1B83A82122E771E3004B56DE /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		1B92610222E3A4040038054A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		1B92610322E3A4040038054A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1B92610422E3A5870038054A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		1B92610522E3A5880038054A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1B98807222E0B03A00E5C9FE /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		1BA0FEC722E4951E0032D9DB /* JsonStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonStructures.swift; sourceTree = "<group>"; };
-		1BB2C5EE22EDB44100FAE302 /* AlphaMood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlphaMood.entitlements; sourceTree = "<group>"; };
 		1BB3C30822DDEFF60042A6E3 /* AlphaMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphaMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BB3C30B22DDEFF60042A6E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BB3C30D22DDEFF60042A6E3 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -48,7 +50,12 @@
 		1BE504B022EB1EB6003893B8 /* PinCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeVC.swift; sourceTree = "<group>"; };
 		1BE504B422EC3EBA003893B8 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 		1BE504BC22EC6038003893B8 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		1BF36A1122EDEF2A0026ABE6 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
+		1BF36A5922EE185A0026ABE6 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		1BF36A5B22EE18EF0026ABE6 /* MoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodModel.swift; sourceTree = "<group>"; };
+		1BF36A5D22EE197C0026ABE6 /* PersonModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModelManager.swift; sourceTree = "<group>"; };
+		1BF36A6022EE205B0026ABE6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1BF36A6222EE21470026ABE6 /* SecondPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageViewModel.swift; sourceTree = "<group>"; };
+		1BF36A6722EE33C90026ABE6 /* PinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewModel.swift; sourceTree = "<group>"; };
 		6DED171E13EDA87E743CD388 /* Pods-AlphaMood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaMood.release.xcconfig"; path = "Target Support Files/Pods-AlphaMood/Pods-AlphaMood.release.xcconfig"; sourceTree = "<group>"; };
 		CA52F15CD4F35C4B30D18B30 /* libPods-AlphaMood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlphaMood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,11 +93,9 @@
 		1BB3C30A22DDEFF60042A6E3 /* AlphaMood */ = {
 			isa = PBXGroup;
 			children = (
-				1BF36A0F22EDEEC10026ABE6 /* ViewModel */,
-				1BB2C5EE22EDB44100FAE302 /* AlphaMood.entitlements */,
 				1BB3C32322DDF43D0042A6E3 /* Model */,
 				1BB3C32222DDF4380042A6E3 /* View */,
-				1BB3C32122DDF4320042A6E3 /* Controller */,
+				1BF36A0F22EDEEC10026ABE6 /* ViewModel */,
 				1BB3C31722DDEFF80042A6E3 /* Info.plist */,
 				1BB3C31F22DDF32A0042A6E3 /* GoogleService-Info.plist */,
 				1BB3C32422DDF44F0042A6E3 /* Resources */,
@@ -99,22 +104,13 @@
 			path = AlphaMood;
 			sourceTree = "<group>";
 		};
-		1BB3C32122DDF4320042A6E3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				1BB3C30D22DDEFF60042A6E3 /* MainVC.swift */,
-				1B98807222E0B03A00E5C9FE /* CommentVC.swift */,
-				1BE504B022EB1EB6003893B8 /* PinCodeVC.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		1BB3C32222DDF4380042A6E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1BF36A6622EE25510026ABE6 /* PinPage */,
+				1BF36A6522EE25490026ABE6 /* SecondPage */,
+				1BF36A5822EE181E0026ABE6 /* StartPage */,
 				1BB3C30F22DDEFF60042A6E3 /* Main.storyboard */,
-				1BE504BC22EC6038003893B8 /* CircleView.swift */,
-				1BE504B422EC3EBA003893B8 /* NumberButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,9 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				1BF36A1322EDEF310026ABE6 /* StartPage */,
-				1B92610022E3875B0038054A /* Person.swift */,
 				1BA0FEC722E4951E0032D9DB /* JsonStructures.swift */,
-				1B83A82122E771E3004B56DE /* UserDefTimer.swift */,
+				1B83A82122E771E3004B56DE /* Pin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,6 +138,8 @@
 		1BF36A0F22EDEEC10026ABE6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1BF36A6922EE33CD0026ABE6 /* PinPage */,
+				1BF36A6422EE23DC0026ABE6 /* SecondPage */,
 				1BF36A1022EDEF0B0026ABE6 /* StartPage */,
 			);
 			path = ViewModel;
@@ -151,7 +148,7 @@
 		1BF36A1022EDEF0B0026ABE6 /* StartPage */ = {
 			isa = PBXGroup;
 			children = (
-				1BF36A1122EDEF2A0026ABE6 /* MainVM.swift */,
+				1BF36A6022EE205B0026ABE6 /* MainViewModel.swift */,
 			);
 			path = StartPage;
 			sourceTree = "<group>";
@@ -159,8 +156,53 @@
 		1BF36A1322EDEF310026ABE6 /* StartPage */ = {
 			isa = PBXGroup;
 			children = (
+				1BF36A5922EE185A0026ABE6 /* PersonModel.swift */,
+				1BF36A5B22EE18EF0026ABE6 /* MoodModel.swift */,
+				1BF36A5D22EE197C0026ABE6 /* PersonModelManager.swift */,
 			);
 			path = StartPage;
+			sourceTree = "<group>";
+		};
+		1BF36A5822EE181E0026ABE6 /* StartPage */ = {
+			isa = PBXGroup;
+			children = (
+				1BB3C30D22DDEFF60042A6E3 /* MainVC.swift */,
+			);
+			path = StartPage;
+			sourceTree = "<group>";
+		};
+		1BF36A6422EE23DC0026ABE6 /* SecondPage */ = {
+			isa = PBXGroup;
+			children = (
+				1BF36A6222EE21470026ABE6 /* SecondPageViewModel.swift */,
+			);
+			path = SecondPage;
+			sourceTree = "<group>";
+		};
+		1BF36A6522EE25490026ABE6 /* SecondPage */ = {
+			isa = PBXGroup;
+			children = (
+				1B98807222E0B03A00E5C9FE /* CommentVC.swift */,
+			);
+			path = SecondPage;
+			sourceTree = "<group>";
+		};
+		1BF36A6622EE25510026ABE6 /* PinPage */ = {
+			isa = PBXGroup;
+			children = (
+				1BE504B022EB1EB6003893B8 /* PinCodeVC.swift */,
+				1BE504BC22EC6038003893B8 /* CircleView.swift */,
+				1BE504B422EC3EBA003893B8 /* NumberButton.swift */,
+			);
+			path = PinPage;
+			sourceTree = "<group>";
+		};
+		1BF36A6922EE33CD0026ABE6 /* PinPage */ = {
+			isa = PBXGroup;
+			children = (
+				1BF36A6722EE33C90026ABE6 /* PinViewModel.swift */,
+			);
+			path = PinPage;
 			sourceTree = "<group>";
 		};
 		3C5D4C8226CC5B77E2DBA176 /* Pods */ = {
@@ -216,7 +258,7 @@
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -311,15 +353,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B92610122E3875B0038054A /* Person.swift in Sources */,
+				1BF36A6822EE33C90026ABE6 /* PinViewModel.swift in Sources */,
 				1BA0FEC822E4951E0032D9DB /* JsonStructures.swift in Sources */,
 				1BB3C30E22DDEFF60042A6E3 /* MainVC.swift in Sources */,
+				1BF36A6122EE205B0026ABE6 /* MainViewModel.swift in Sources */,
 				1B98807322E0B03A00E5C9FE /* CommentVC.swift in Sources */,
 				1BB3C30C22DDEFF60042A6E3 /* AppDelegate.swift in Sources */,
 				1BE504B122EB1EB6003893B8 /* PinCodeVC.swift in Sources */,
 				1BE504BD22EC6038003893B8 /* CircleView.swift in Sources */,
-				1BF36A1222EDEF2A0026ABE6 /* MainVM.swift in Sources */,
-				1B83A82222E771E3004B56DE /* UserDefTimer.swift in Sources */,
+				1BF36A6322EE21470026ABE6 /* SecondPageViewModel.swift in Sources */,
+				1BF36A5C22EE18EF0026ABE6 /* MoodModel.swift in Sources */,
+				1BF36A5A22EE185A0026ABE6 /* PersonModel.swift in Sources */,
+				1BF36A5E22EE197C0026ABE6 /* PersonModelManager.swift in Sources */,
+				1B83A82222E771E3004B56DE /* Pin.swift in Sources */,
 				1BB3C32622DDF45D0042A6E3 /* Constants.swift in Sources */,
 				1BE504B522EC3EBA003893B8 /* NumberButton.swift in Sources */,
 			);
@@ -474,7 +520,6 @@
 			baseConfigurationReference = 0C296E16527C1D8F3E46FDEF /* Pods-AlphaMood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AlphaMood/AlphaMood.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PGH5NL8BP2;
 				INFOPLIST_FILE = AlphaMood/Info.plist;
@@ -494,7 +539,6 @@
 			baseConfigurationReference = 6DED171E13EDA87E743CD388 /* Pods-AlphaMood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AlphaMood/AlphaMood.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PGH5NL8BP2;
 				INFOPLIST_FILE = AlphaMood/Info.plist;

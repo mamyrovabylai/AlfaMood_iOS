@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import FirebaseFirestore
+import Firebase
 let REF_FOR_MOBILE = Firestore.firestore().collection("forMobile") 
 let REF_FROM_ML = Firestore.firestore().collection("fromML")
 

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+enum MoodModel: Int {
+    case neutral = 0
+    case positive = 1
+    case negative = 2
+}
