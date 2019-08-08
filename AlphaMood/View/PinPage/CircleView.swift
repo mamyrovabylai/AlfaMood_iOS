@@ -30,7 +30,7 @@ class CircleView: UIView {
         self.shape = CAShapeLayer()
         shape.path = UIBezierPath(ovalIn: self.bounds).cgPath
         drawShape(with: with)
-        shape.strokeColor = UIColor.white.cgColor
+        shape.strokeColor = UIColor.black.cgColor
         self.layer.addSublayer(shape)
     }
     func drawShape (with: UIColor) {

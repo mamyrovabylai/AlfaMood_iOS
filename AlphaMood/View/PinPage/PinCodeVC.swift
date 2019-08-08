@@ -18,46 +18,52 @@ class PinCodeVC: UIViewController {
     var delegate: PinDelegate?
 
     @IBOutlet weak var circle1: CircleView!
-    
     @IBOutlet weak var circle2: CircleView!
     @IBOutlet weak var circle3: CircleView!
-    
     @IBOutlet weak var circle4: CircleView!
     
     var circles = [CircleView]()
     var counter = 0
     var pin = [Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "back")!)
         circles.append(contentsOf: [circle1,circle2,circle3,circle4])
     }
     
 
     @IBAction func numberButtonTapped(_ sender: NumberButton) {
         
+        
         circles[counter].drawShape(with: .lightGray)
         pin.append(sender.tag)
         counter += 1
         
         if counter == 4 {
-            Pin.savePin(pin: "1379")
-            let rightPassword = viewModel.getPin()
-            if rightPassword == pin {
-                viewModel.pinUser()
-                delegate?.pinWillDismiss(viewModel: viewModel.mainViewModel())
-                self.dismiss(animated: true, completion: nil)
-            } else {
-                circles.forEach { (circle) in
-                    circle.drawShape(with: .clear)
+            self.view.isUserInteractionEnabled = false
+            
+            viewModel.getPin { (rightPassword) in
+                if rightPassword == self.pin {
+                    self.viewModel.pinUser()
+                    self.dismiss(animated: true, completion: nil)
+                    self.delegate?.pinWillDismiss(viewModel: self.viewModel.mainViewModel())
+                    
+                } else {
+                    self.circles.forEach { (circle) in
+                        circle.drawShape(with: .clear)
+                    }
+                    self.view.isUserInteractionEnabled = true
+                    self.counter = 0
+                    self.pin = []
+                    let alert = UIAlertController(title: PINALERT_TITLE, message: PINALERT_MSG, preferredStyle: .alert )
+                    alert.addAction(UIAlertAction(title: PINALERT_ACTTITLE, style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
                 }
-                counter = 0
-                pin = []
-                let alert = UIAlertController(title: "Пароль", message: "Неправильный пароль", preferredStyle: .alert )
-                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
             }
+           
         }
+        
+        
     }
     
     
@@ -65,22 +71,9 @@ class PinCodeVC: UIViewController {
         if counter > 0 {
             circles[counter-1].drawShape(with: .clear)
             pin.remove(at: counter-1)
-            
             counter -= 1
-            
         }
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 

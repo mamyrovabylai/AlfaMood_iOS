@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B070B3F22F44816004668E6 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B070B3E22F44816004668E6 /* GraphViewController.swift */; };
+		1B070B4122F4487D004668E6 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B070B4022F4487D004668E6 /* LineView.swift */; };
+		1B070B4322F44A24004668E6 /* CubicCurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B070B4222F44A24004668E6 /* CubicCurveAlgorithm.swift */; };
 		1B83A82222E771E3004B56DE /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83A82122E771E3004B56DE /* Pin.swift */; };
+		1B854F9B22F9738000788D5C /* datePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B854F9A22F9738000788D5C /* datePicker.xib */; };
+		1B854F9D22F9758900788D5C /* datePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B854F9C22F9758900788D5C /* datePicker.swift */; };
 		1B98807322E0B03A00E5C9FE /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B98807222E0B03A00E5C9FE /* CommentVC.swift */; };
 		1BA0FEC822E4951E0032D9DB /* JsonStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0FEC722E4951E0032D9DB /* JsonStructures.swift */; };
 		1BB3C30C22DDEFF60042A6E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3C30B22DDEFF60042A6E3 /* AppDelegate.swift */; };
@@ -17,6 +22,14 @@
 		1BB3C32022DDF32A0042A6E3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BB3C31F22DDF32A0042A6E3 /* GoogleService-Info.plist */; };
 		1BB3C32622DDF45D0042A6E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3C32522DDF45D0042A6E3 /* Constants.swift */; };
 		1BB3C33422DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BB3C33322DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets */; };
+		1BBE758322F2DB3E0082BAC2 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE758222F2DB3E0082BAC2 /* HeaderCell.swift */; };
+		1BBE758922F304510082BAC2 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE758822F304510082BAC2 /* GraphViewModel.swift */; };
+		1BD4B33822F1FD73006763B0 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4B33722F1FD73006763B0 /* CommentModel.swift */; };
+		1BD4B33B22F2004C006763B0 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4B33A22F2004C006763B0 /* CommentsViewModel.swift */; };
+		1BD4B33E22F21C50006763B0 /* CommentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4B33D22F21C50006763B0 /* CommentCellViewModel.swift */; };
+		1BD4B34122F22820006763B0 /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4B34022F22820006763B0 /* CommentsVC.swift */; };
+		1BD4B34322F22AC5006763B0 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4B34222F22AC5006763B0 /* CommentCell.swift */; };
+		1BD4B34922F2478F006763B0 /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4B34822F2478F006763B0 /* HeaderViewModel.swift */; };
 		1BE504B122EB1EB6003893B8 /* PinCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504B022EB1EB6003893B8 /* PinCodeVC.swift */; };
 		1BE504B522EC3EBA003893B8 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504B422EC3EBA003893B8 /* NumberButton.swift */; };
 		1BE504BD22EC6038003893B8 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504BC22EC6038003893B8 /* CircleView.swift */; };
@@ -26,12 +39,29 @@
 		1BF36A6122EE205B0026ABE6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF36A6022EE205B0026ABE6 /* MainViewModel.swift */; };
 		1BF36A6322EE21470026ABE6 /* SecondPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF36A6222EE21470026ABE6 /* SecondPageViewModel.swift */; };
 		1BF36A6822EE33C90026ABE6 /* PinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF36A6722EE33C90026ABE6 /* PinViewModel.swift */; };
+		1BF401E622F1B07100E9486F /* AlphaMoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF401E522F1B07100E9486F /* AlphaMoodTests.swift */; };
+		4E9E4882AEFA6787A1014400 /* libPods-AlphaMoodTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4A1DB3BF3C59B2ED8080AE /* libPods-AlphaMoodTests.a */; };
 		8A44D1D992A155F437EEC311 /* libPods-AlphaMood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA52F15CD4F35C4B30D18B30 /* libPods-AlphaMood.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1BF401E822F1B07100E9486F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BB3C30022DDEFF60042A6E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BB3C30722DDEFF60042A6E3;
+			remoteInfo = AlphaMood;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0C296E16527C1D8F3E46FDEF /* Pods-AlphaMood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaMood.debug.xcconfig"; path = "Target Support Files/Pods-AlphaMood/Pods-AlphaMood.debug.xcconfig"; sourceTree = "<group>"; };
+		1B070B3E22F44816004668E6 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		1B070B4022F4487D004668E6 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		1B070B4222F44A24004668E6 /* CubicCurveAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubicCurveAlgorithm.swift; sourceTree = "<group>"; };
 		1B83A82122E771E3004B56DE /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		1B854F9A22F9738000788D5C /* datePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = datePicker.xib; sourceTree = "<group>"; };
+		1B854F9C22F9758900788D5C /* datePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datePicker.swift; sourceTree = "<group>"; };
 		1B92610222E3A4040038054A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		1B92610322E3A4040038054A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1B92610422E3A5870038054A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -47,6 +77,14 @@
 		1BB3C31F22DDF32A0042A6E3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1BB3C32522DDF45D0042A6E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1BB3C33322DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 19-48-47-177.xcassets"; sourceTree = "<group>"; };
+		1BBE758222F2DB3E0082BAC2 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		1BBE758822F304510082BAC2 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
+		1BD4B33722F1FD73006763B0 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		1BD4B33A22F2004C006763B0 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		1BD4B33D22F21C50006763B0 /* CommentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellViewModel.swift; sourceTree = "<group>"; };
+		1BD4B34022F22820006763B0 /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
+		1BD4B34222F22AC5006763B0 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		1BD4B34822F2478F006763B0 /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
 		1BE504B022EB1EB6003893B8 /* PinCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCodeVC.swift; sourceTree = "<group>"; };
 		1BE504B422EC3EBA003893B8 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 		1BE504BC22EC6038003893B8 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -56,7 +94,13 @@
 		1BF36A6022EE205B0026ABE6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1BF36A6222EE21470026ABE6 /* SecondPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageViewModel.swift; sourceTree = "<group>"; };
 		1BF36A6722EE33C90026ABE6 /* PinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinViewModel.swift; sourceTree = "<group>"; };
+		1BF401E322F1B07000E9486F /* AlphaMoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlphaMoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BF401E522F1B07100E9486F /* AlphaMoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaMoodTests.swift; sourceTree = "<group>"; };
+		1BF401E722F1B07100E9486F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E4A1DB3BF3C59B2ED8080AE /* libPods-AlphaMoodTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlphaMoodTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67D5C0DF25A81E989918F6AD /* Pods-AlphaMoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaMoodTests.release.xcconfig"; path = "Target Support Files/Pods-AlphaMoodTests/Pods-AlphaMoodTests.release.xcconfig"; sourceTree = "<group>"; };
 		6DED171E13EDA87E743CD388 /* Pods-AlphaMood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaMood.release.xcconfig"; path = "Target Support Files/Pods-AlphaMood/Pods-AlphaMood.release.xcconfig"; sourceTree = "<group>"; };
+		C38F86D9FE843E80A85D492D /* Pods-AlphaMoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaMoodTests.debug.xcconfig"; path = "Target Support Files/Pods-AlphaMoodTests/Pods-AlphaMoodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA52F15CD4F35C4B30D18B30 /* libPods-AlphaMood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlphaMood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -69,6 +113,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1BF401E022F1B07000E9486F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E9E4882AEFA6787A1014400 /* libPods-AlphaMoodTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -76,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				1BB3C30A22DDEFF60042A6E3 /* AlphaMood */,
+				1BF401E422F1B07100E9486F /* AlphaMoodTests */,
 				1BB3C30922DDEFF60042A6E3 /* Products */,
 				3C5D4C8226CC5B77E2DBA176 /* Pods */,
 				9DA4F13EFCC31E32F8B6FA72 /* Frameworks */,
@@ -86,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				1BB3C30822DDEFF60042A6E3 /* AlphaMood.app */,
+				1BF401E322F1B07000E9486F /* AlphaMoodTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,10 +150,10 @@
 				1BB3C32322DDF43D0042A6E3 /* Model */,
 				1BB3C32222DDF4380042A6E3 /* View */,
 				1BF36A0F22EDEEC10026ABE6 /* ViewModel */,
-				1BB3C31722DDEFF80042A6E3 /* Info.plist */,
-				1BB3C31F22DDF32A0042A6E3 /* GoogleService-Info.plist */,
 				1BB3C32422DDF44F0042A6E3 /* Resources */,
 				1BB3C30B22DDEFF60042A6E3 /* AppDelegate.swift */,
+				1BB3C31722DDEFF80042A6E3 /* Info.plist */,
+				1BB3C31F22DDF32A0042A6E3 /* GoogleService-Info.plist */,
 			);
 			path = AlphaMood;
 			sourceTree = "<group>";
@@ -107,8 +161,10 @@
 		1BB3C32222DDF4380042A6E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1BBE758422F303B80082BAC2 /* GraphPage */,
+				1BD4B33F22F227FC006763B0 /* CommentsPage */,
 				1BF36A6622EE25510026ABE6 /* PinPage */,
-				1BF36A6522EE25490026ABE6 /* SecondPage */,
+				1BF36A6522EE25490026ABE6 /* WritePage */,
 				1BF36A5822EE181E0026ABE6 /* StartPage */,
 				1BB3C30F22DDEFF60042A6E3 /* Main.storyboard */,
 			);
@@ -118,9 +174,9 @@
 		1BB3C32322DDF43D0042A6E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BD4B33C22F21436006763B0 /* Static&Structure */,
+				1BF401EE22F1FC4300E9486F /* CommentsPage */,
 				1BF36A1322EDEF310026ABE6 /* StartPage */,
-				1BA0FEC722E4951E0032D9DB /* JsonStructures.swift */,
-				1B83A82122E771E3004B56DE /* Pin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,11 +191,63 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1BBE758422F303B80082BAC2 /* GraphPage */ = {
+			isa = PBXGroup;
+			children = (
+				1B070B3E22F44816004668E6 /* GraphViewController.swift */,
+				1B070B4022F4487D004668E6 /* LineView.swift */,
+				1B070B4222F44A24004668E6 /* CubicCurveAlgorithm.swift */,
+				1B854F9A22F9738000788D5C /* datePicker.xib */,
+				1B854F9C22F9758900788D5C /* datePicker.swift */,
+			);
+			path = GraphPage;
+			sourceTree = "<group>";
+		};
+		1BBE758722F3043F0082BAC2 /* GraphViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1BBE758822F304510082BAC2 /* GraphViewModel.swift */,
+			);
+			path = GraphViewModel;
+			sourceTree = "<group>";
+		};
+		1BD4B33922F2000E006763B0 /* CommentsPage */ = {
+			isa = PBXGroup;
+			children = (
+				1BD4B33A22F2004C006763B0 /* CommentsViewModel.swift */,
+				1BD4B33D22F21C50006763B0 /* CommentCellViewModel.swift */,
+				1BD4B34822F2478F006763B0 /* HeaderViewModel.swift */,
+			);
+			path = CommentsPage;
+			sourceTree = "<group>";
+		};
+		1BD4B33C22F21436006763B0 /* Static&Structure */ = {
+			isa = PBXGroup;
+			children = (
+				1BA0FEC722E4951E0032D9DB /* JsonStructures.swift */,
+				1B83A82122E771E3004B56DE /* Pin.swift */,
+				1BF36A5B22EE18EF0026ABE6 /* MoodModel.swift */,
+			);
+			path = "Static&Structure";
+			sourceTree = "<group>";
+		};
+		1BD4B33F22F227FC006763B0 /* CommentsPage */ = {
+			isa = PBXGroup;
+			children = (
+				1BD4B34022F22820006763B0 /* CommentsVC.swift */,
+				1BD4B34222F22AC5006763B0 /* CommentCell.swift */,
+				1BBE758222F2DB3E0082BAC2 /* HeaderCell.swift */,
+			);
+			path = CommentsPage;
+			sourceTree = "<group>";
+		};
 		1BF36A0F22EDEEC10026ABE6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1BBE758722F3043F0082BAC2 /* GraphViewModel */,
+				1BD4B33922F2000E006763B0 /* CommentsPage */,
 				1BF36A6922EE33CD0026ABE6 /* PinPage */,
-				1BF36A6422EE23DC0026ABE6 /* SecondPage */,
+				1BF36A6422EE23DC0026ABE6 /* WritePage */,
 				1BF36A1022EDEF0B0026ABE6 /* StartPage */,
 			);
 			path = ViewModel;
@@ -157,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				1BF36A5922EE185A0026ABE6 /* PersonModel.swift */,
-				1BF36A5B22EE18EF0026ABE6 /* MoodModel.swift */,
 				1BF36A5D22EE197C0026ABE6 /* PersonModelManager.swift */,
 			);
 			path = StartPage;
@@ -171,20 +278,20 @@
 			path = StartPage;
 			sourceTree = "<group>";
 		};
-		1BF36A6422EE23DC0026ABE6 /* SecondPage */ = {
+		1BF36A6422EE23DC0026ABE6 /* WritePage */ = {
 			isa = PBXGroup;
 			children = (
 				1BF36A6222EE21470026ABE6 /* SecondPageViewModel.swift */,
 			);
-			path = SecondPage;
+			path = WritePage;
 			sourceTree = "<group>";
 		};
-		1BF36A6522EE25490026ABE6 /* SecondPage */ = {
+		1BF36A6522EE25490026ABE6 /* WritePage */ = {
 			isa = PBXGroup;
 			children = (
 				1B98807222E0B03A00E5C9FE /* CommentVC.swift */,
 			);
-			path = SecondPage;
+			path = WritePage;
 			sourceTree = "<group>";
 		};
 		1BF36A6622EE25510026ABE6 /* PinPage */ = {
@@ -205,11 +312,30 @@
 			path = PinPage;
 			sourceTree = "<group>";
 		};
+		1BF401E422F1B07100E9486F /* AlphaMoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				1BF401E522F1B07100E9486F /* AlphaMoodTests.swift */,
+				1BF401E722F1B07100E9486F /* Info.plist */,
+			);
+			path = AlphaMoodTests;
+			sourceTree = "<group>";
+		};
+		1BF401EE22F1FC4300E9486F /* CommentsPage */ = {
+			isa = PBXGroup;
+			children = (
+				1BD4B33722F1FD73006763B0 /* CommentModel.swift */,
+			);
+			path = CommentsPage;
+			sourceTree = "<group>";
+		};
 		3C5D4C8226CC5B77E2DBA176 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				0C296E16527C1D8F3E46FDEF /* Pods-AlphaMood.debug.xcconfig */,
 				6DED171E13EDA87E743CD388 /* Pods-AlphaMood.release.xcconfig */,
+				C38F86D9FE843E80A85D492D /* Pods-AlphaMoodTests.debug.xcconfig */,
+				67D5C0DF25A81E989918F6AD /* Pods-AlphaMoodTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -218,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				CA52F15CD4F35C4B30D18B30 /* libPods-AlphaMood.a */,
+				2E4A1DB3BF3C59B2ED8080AE /* libPods-AlphaMoodTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,13 +371,33 @@
 			productReference = 1BB3C30822DDEFF60042A6E3 /* AlphaMood.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1BF401E222F1B07000E9486F /* AlphaMoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BF401EA22F1B07100E9486F /* Build configuration list for PBXNativeTarget "AlphaMoodTests" */;
+			buildPhases = (
+				1E2B95233D347D81756785B0 /* [CP] Check Pods Manifest.lock */,
+				1BF401DF22F1B07000E9486F /* Sources */,
+				1BF401E022F1B07000E9486F /* Frameworks */,
+				1BF401E122F1B07000E9486F /* Resources */,
+				64802674A8EF782F394ECB8E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BF401E922F1B07100E9486F /* PBXTargetDependency */,
+			);
+			name = AlphaMoodTests;
+			productName = AlphaMoodTests;
+			productReference = 1BF401E322F1B07000E9486F /* AlphaMoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1BB3C30022DDEFF60042A6E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Абылайхан";
 				TargetAttributes = {
@@ -261,6 +408,10 @@
 								enabled = 0;
 							};
 						};
+					};
+					1BF401E222F1B07000E9486F = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 1BB3C30722DDEFF60042A6E3;
 					};
 				};
 			};
@@ -279,6 +430,7 @@
 			projectRoot = "";
 			targets = (
 				1BB3C30722DDEFF60042A6E3 /* AlphaMood */,
+				1BF401E222F1B07000E9486F /* AlphaMoodTests */,
 			);
 		};
 /* End PBXProject section */
@@ -291,13 +443,43 @@
 				1BB3C31622DDEFF80042A6E3 /* LaunchScreen.storyboard in Resources */,
 				1BB3C33422DE0D4E0042A6E3 /* Assets 19-48-47-177.xcassets in Resources */,
 				1BB3C32022DDF32A0042A6E3 /* GoogleService-Info.plist in Resources */,
+				1B854F9B22F9738000788D5C /* datePicker.xib in Resources */,
 				1BB3C31122DDEFF60042A6E3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BF401E122F1B07000E9486F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1E2B95233D347D81756785B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlphaMoodTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		470F596266BC35378B7A3BBE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +504,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlphaMood/Pods-AlphaMood-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64802674A8EF782F394ECB8E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlphaMoodTests/Pods-AlphaMoodTests-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlphaMoodTests/Pods-AlphaMoodTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C54C85D003D347E7712B2895 /* [CP] Check Pods Manifest.lock */ = {
@@ -354,24 +558,52 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BF36A6822EE33C90026ABE6 /* PinViewModel.swift in Sources */,
+				1B070B3F22F44816004668E6 /* GraphViewController.swift in Sources */,
+				1BD4B33822F1FD73006763B0 /* CommentModel.swift in Sources */,
+				1B854F9D22F9758900788D5C /* datePicker.swift in Sources */,
 				1BA0FEC822E4951E0032D9DB /* JsonStructures.swift in Sources */,
+				1B070B4122F4487D004668E6 /* LineView.swift in Sources */,
 				1BB3C30E22DDEFF60042A6E3 /* MainVC.swift in Sources */,
 				1BF36A6122EE205B0026ABE6 /* MainViewModel.swift in Sources */,
+				1BBE758922F304510082BAC2 /* GraphViewModel.swift in Sources */,
 				1B98807322E0B03A00E5C9FE /* CommentVC.swift in Sources */,
 				1BB3C30C22DDEFF60042A6E3 /* AppDelegate.swift in Sources */,
+				1B070B4322F44A24004668E6 /* CubicCurveAlgorithm.swift in Sources */,
+				1BBE758322F2DB3E0082BAC2 /* HeaderCell.swift in Sources */,
 				1BE504B122EB1EB6003893B8 /* PinCodeVC.swift in Sources */,
+				1BD4B34122F22820006763B0 /* CommentsVC.swift in Sources */,
 				1BE504BD22EC6038003893B8 /* CircleView.swift in Sources */,
 				1BF36A6322EE21470026ABE6 /* SecondPageViewModel.swift in Sources */,
+				1BD4B33E22F21C50006763B0 /* CommentCellViewModel.swift in Sources */,
 				1BF36A5C22EE18EF0026ABE6 /* MoodModel.swift in Sources */,
 				1BF36A5A22EE185A0026ABE6 /* PersonModel.swift in Sources */,
 				1BF36A5E22EE197C0026ABE6 /* PersonModelManager.swift in Sources */,
+				1BD4B34322F22AC5006763B0 /* CommentCell.swift in Sources */,
 				1B83A82222E771E3004B56DE /* Pin.swift in Sources */,
 				1BB3C32622DDF45D0042A6E3 /* Constants.swift in Sources */,
 				1BE504B522EC3EBA003893B8 /* NumberButton.swift in Sources */,
+				1BD4B33B22F2004C006763B0 /* CommentsViewModel.swift in Sources */,
+				1BD4B34922F2478F006763B0 /* HeaderViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BF401DF22F1B07000E9486F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BF401E622F1B07100E9486F /* AlphaMoodTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BF401E922F1B07100E9486F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BB3C30722DDEFF60042A6E3 /* AlphaMood */;
+			targetProxy = 1BF401E822F1B07100E9486F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1BB3C30F22DDEFF60042A6E3 /* Main.storyboard */ = {
@@ -530,7 +762,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.work.AlphaMood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -549,7 +781,51 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.work.AlphaMood;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		1BF401EB22F1B07100E9486F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C38F86D9FE843E80A85D492D /* Pods-AlphaMoodTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PGH5NL8BP2;
+				INFOPLIST_FILE = AlphaMoodTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.work.AlphaMoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlphaMood.app/AlphaMood";
+			};
+			name = Debug;
+		};
+		1BF401EC22F1B07100E9486F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67D5C0DF25A81E989918F6AD /* Pods-AlphaMoodTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PGH5NL8BP2;
+				INFOPLIST_FILE = AlphaMoodTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.work.AlphaMoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlphaMood.app/AlphaMood";
 			};
 			name = Release;
 		};
@@ -570,6 +846,15 @@
 			buildConfigurations = (
 				1BB3C31B22DDEFF80042A6E3 /* Debug */,
 				1BB3C31C22DDEFF80042A6E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BF401EA22F1B07100E9486F /* Build configuration list for PBXNativeTarget "AlphaMoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BF401EB22F1B07100E9486F /* Debug */,
+				1BF401EC22F1B07100E9486F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,8 +6,15 @@ target 'AlphaMood' do
   #use_frameworks!
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
   pod 'SmoothPicker'
   pod 'Hashtags'
+  pod "Macaw", "0.9.5"
 # Pods for AlphaMood
-
+   target 'AlphaMoodTests' do
+    inherit! :search_paths
+    pod 'Firebase/Core'
+    pod 'Firebase/Firestore'
+    pod 'Firebase/Auth'
+  end
 end

@@ -7,65 +7,90 @@
 //
 
 import Foundation
-
+import Firebase
 class PersonModelManager {
     
    
     
-    func createPerson() -> PersonModel {
-        var id: String!
-        id = getUserID()
-        if id == nil {
-            id = generateUserId()
+    func createPerson(id: String, pinned: Bool? = nil, completion: @escaping (PersonModel)->()){
+        var date: Date?
+        getLastDate(userid: id) { (d) in
+            date = d
         }
-        let date = getLastDate()
-        let lastMood = getLastMood()
-        let pinned = getStateOfPinned()
         
-        return PersonModel(userId: id, mood: nil, date: date, lastMood: lastMood, isPinned: pinned)
-        
-    }
-    
-    private func getUserID() -> String?{
-        if let userID = UserDefaults.standard.string(forKey: "AlfaBankUserID") {
-            return userID
-        } else {
-            return nil
+        var lastMood: MoodModel?
+        getLastMood(userid: id) { (mood) in
+            lastMood = mood
         }
-    }
-    private func generateUserId() -> String {
-        let userID = UUID().uuidString
-        UserDefaults.standard.set(userID, forKey: "AlfaBankUserID")
-        UserDefaults.standard.synchronize()
-        return userID
-    }
-    
-    func getLastDate() -> Date? {
-        if let date = UserDefaults.standard.object(forKey: "AlfaBankUserDate") as? Date{
-            return date
+        var isPinned: Bool!
+        if let pinned = pinned {
+            isPinned = pinned
+            completion(PersonModel(userId: id, mood: nil, date: date, lastMood: lastMood, isPinned: isPinned))
         } else {
-            return nil
-        }
-    }
-    
-    func getLastMood() -> MoodModel? {
-        if let mood = UserDefaults.standard.object(forKey: "AlfaBankUserMood") as? Int {
-            switch mood {
-            case 0:
-                return .neutral
-            case 2:
-                return .negative
-            default:
-                return .positive
+            getIsPinned(userid: id) { (pinned) in
+                isPinned = pinned
+                completion(PersonModel(userId: id, mood: nil, date: date, lastMood: lastMood, isPinned: isPinned))
             }
-        } else {
-            return nil
+        }
+        
+        
+    }
+    
+    
+    func getLastDate(userid: String, completion: @escaping (Date?)->())  {
+        Firestore.firestore().collection(PATH_USERS).document(userid).getDocument { (snap, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            } else {
+                guard let snapshot = snap?.data() else {
+                    return
+                }
+                var date: Date? = nil
+                if let lastDate = snapshot[KEY_LAST_DATE] as? Timestamp {
+                    date = Date(timeIntervalSince1970: TimeInterval(lastDate.seconds))
+                }
+                completion(date)
+            }
         }
     }
     
-    func getStateOfPinned() -> Bool {
-        return UserDefaults.standard.bool(forKey: "AlfaBankUserPinned")
+    func getLastMood(userid: String, completion: @escaping (MoodModel?)->()) {
+        Firestore.firestore().collection(PATH_USERS).document(userid).getDocument { (snap, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            } else {
+                guard let snapshot = snap?.data() else {
+                    return
+                }
+                var mood: MoodModel? = nil
+                if let userMood = snapshot[KEY_USER_MOOD] as? Int {
+                    mood = MoodModel(rawValue: userMood)
+                }
+                completion(mood)
+            }
+        }
     }
+    func getIsPinned(userid: String, completion: @escaping (Bool)->())  {
+        Firestore.firestore().collection(PATH_USERS).document(userid).getDocument { (snap, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            } else {
+                guard let snapshot = snap?.data() else {
+                    return
+                }
+                var isPinned = false
+                if let pinned = snapshot[KEY_IS_PINNED] as? Bool {
+                    isPinned = pinned
+                }
+                completion(isPinned)
+            }
+        }
+    }
+    
+    
     
     
     

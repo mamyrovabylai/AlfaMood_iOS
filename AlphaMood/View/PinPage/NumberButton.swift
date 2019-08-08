@@ -26,7 +26,7 @@ class NumberButton: UIButton {
         self.path = UIBezierPath(ovalIn: rect)
         shape.path = path.cgPath
         shape.fillColor = UIColor.clear.cgColor
-        shape.strokeColor = UIColor.white.cgColor
+        shape.strokeColor = UIColor.black.cgColor
         self.layer.addSublayer(shape)
         
     }

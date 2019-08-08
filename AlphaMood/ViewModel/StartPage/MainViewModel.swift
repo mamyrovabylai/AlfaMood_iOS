@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class MainViewModel{
     
@@ -14,22 +15,22 @@ class MainViewModel{
     
     let components = DateComponentsFormatter()
     
+    var handler: AuthStateDidChangeListenerHandle!
+    
+    
+    
     func getStringForTimer(left: Int) -> String {
         return components.string(from: TimeInterval(left))!
     }
     
-    var personMM: PersonModelManager!
+    var personMM: PersonModelManager! = PersonModelManager()
     
     var person: PersonModel!
     
     
     init(person: PersonModel? = nil){
-        if person == nil{
-            self.personMM = PersonModelManager()
-            self.person = personMM.createPerson()
-        } else {
             self.person = person
-        }
+        
         
         components.allowedUnits = [.hour, .minute, .second]
         components.unitsStyle = .full
@@ -37,24 +38,17 @@ class MainViewModel{
     
     
     
+    
+    
+    
     func secondPageViewModel(pickedIndex: Int) -> SecondPageViewModel? {
         var mood: MoodModel?
-        switch pickedIndex {
-        case 0:
-            mood = .neutral
-        case 1:
-            mood = .positive
-        case 2:
-            mood = .negative
-        default:
-            mood = nil
-            
-        }
+        mood = MoodModel(rawValue: pickedIndex)
+       
         if let mood = mood{
             person.setCurrenMood(mood: mood)
             return SecondPageViewModel(personModel: self.person)
         } else {
-            print("Mood is nil")
             return nil
         }
     }
@@ -64,10 +58,17 @@ class MainViewModel{
     }
     
     func isUserPinned() -> Bool {
-        return person.isPinned
+        if let pinned = person.isPinned {
+            return pinned
+        } else {
+            return false
+        }
     }
     
     func checkAllowence() -> (Bool, Int?) {
+        guard let person = self.person else {
+            return (false, 0)
+        }
         if let lastDate = person.lastDate {
             if Date().timeIntervalSince(lastDate) > 59 {
                 return (true, nil)
@@ -76,6 +77,45 @@ class MainViewModel{
             }
         } else {
             return (true, nil)
+        }
+    }
+    
+    func isUserLogged(completion: @escaping (Bool)->Void){
+        handler = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            if user == nil{
+                completion(false)
+            } else {
+                self.personMM.createPerson(id: Auth.auth().currentUser!.uid){ (gotPerson) in
+                    self.person = gotPerson
+                    completion(true)
+                }
+                
+            }
+        })
+    }
+    
+    func authorizeAnon(completion: @escaping ()->()){
+        Auth.auth().signInAnonymously { (res, error) in
+            if let error = error {
+                return
+            } else {
+                guard let result = res else  { return }
+                let userId = result.user.uid
+                Firestore.firestore().collection(PATH_USERS).document(userId).setData([
+                     KEY_USER_ID2 : userId
+                    ], completion: { (error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                            return
+                        } else {
+                            self.personMM.createPerson(id: Auth.auth().currentUser!.uid){ (gotPerson) in
+                                self.person = gotPerson
+                                completion()
+                            }
+                        }
+                })
+                
+            }
         }
     }
 }

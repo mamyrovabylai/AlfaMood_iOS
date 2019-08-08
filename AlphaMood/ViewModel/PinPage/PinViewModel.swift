@@ -16,13 +16,17 @@ class PinViewModel {
     }
     
     
-    func getPin() -> [Int] {
-        let rightPassword = Pin.getPin()!
-        var rightPass = [Int]()
-        rightPassword.forEach { (char) in
-            rightPass.append(Int(String(char))!)
+    func getPin(completion: @escaping ([Int])->()){
+        var rightPassword = ""
+        Pin.getPin { (pin) in
+            rightPassword = pin
+            var rightPass = [Int]()
+            rightPassword.forEach { (char) in
+                rightPass.append(Int(String(char))!)
+            }
+            completion(rightPass)
         }
-        return rightPass
+        
     }
     
     

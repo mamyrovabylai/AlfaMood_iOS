@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "29085EEC71D36E3A82840DA7F0F5DD3E"
+               BlueprintIdentifier = "D25EEF3BC8939A1B0A8205271BBB39B3"
                BlueprintName = "SmoothPicker"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libSmoothPicker.a">
