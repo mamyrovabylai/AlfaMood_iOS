@@ -92,8 +92,7 @@ class PersonModel{
                 for doc in snap.documents{
                     let docID = doc.documentID
                     let docRef = self.curRef.document(docID)
-                    self.batch.setData([KEY_NUMBER: FieldValue.increment(Int64(1)), KEY_INIT_COMMENT: FieldValue.arrayUnion([initialComment]),
-                                        KEY_LIKES: 0
+                    self.batch.setData([KEY_NUMBER: FieldValue.increment(Int64(1)), KEY_INIT_COMMENT: FieldValue.arrayUnion([initialComment])
                                         ], forDocument: docRef, merge: true)
                 }
                 
