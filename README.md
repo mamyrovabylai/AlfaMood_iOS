@@ -1,5 +1,5 @@
 # AlfaMood_iOS
-#Mood Tracker<h1> App</h1>
+<h1> Mood TrackerApp</h1>
 
 This is iOS client side of the mood tracker which works with **Firebase/Firestore** written **by me**.
 It connects to the **ML** model on server that written using flask **by teammates** and gets needed data.
